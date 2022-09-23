@@ -8,6 +8,35 @@ Note: both files are csv files.
 
 
 1. Create a schema based on the given dataset
+    # Dataset-1
+    - create table AgentLogReport
+    (
+    srno int,
+    agent string,
+    date string,
+    login_time string,
+    logout_time string,
+    duration string
+    )
+    row format delimited
+    fields terminated by ','
+    tblproperties("skip.header.line.count"="1");
+    # Dataset- 2
+    - create table AgentPerformance
+    (
+    srno int,
+    date string,
+    agent_name string,
+    total_chat int,
+    avg_resp_time string,
+    avg_reso_time string,
+    avg_rating float,
+    total_fb int
+    )
+    row format delimited
+    fields terminated by ','
+    tblproperties("skip.header.line.count"="1");
+
 2. Dump the data inside the hdfs in the given schema location.
 3. List of all agents' names. 
 4. Find out agent average rating.
